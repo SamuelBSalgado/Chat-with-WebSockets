@@ -1,9 +1,7 @@
 {
   "name": "websocket",
   "version": "1.0.0",
-  "type": "module",
-  "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ws": "^8.13.0"
-  }
+    "ws": "^8.13.0",
+    "wss": "^0.0.2"
+  },
+  "devDependencies": {},
+  "description": ""
 }

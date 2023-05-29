@@ -21,6 +21,7 @@ function connect() {
 
   const username = usernameInput.value;
   if (username) {
+    chatBox.innerHTML += `${usernameInput.value} ha entrado al chat. <br>`
 const socket = new WebSocket('ws://localhost:8081');
     socket.onopen = function(event) {
       socket.send(JSON.stringify({
@@ -40,7 +41,7 @@ const socket = new WebSocket('ws://localhost:8081');
       switch (data.type) {
         case 'message':
           const chatBox = document.getElementById('chatBox');
-          const message = `[${data.time}] ${data.sender}: ${data.message}`;
+          const message = `[${data.time}] ${usernameInput.value}: ${data.message}`;
           chatBox.innerHTML += message + '<br>';
           chatBox.scrollTop = chatBox.scrollHeight;
           break;
